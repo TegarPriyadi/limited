@@ -14,7 +14,8 @@ local screenGui = Instance.new("ScreenGui", game.CoreGui)
 local function keyIsSaved()
         screenGui:Destroy()
         Notif("Auto Load Key: KEY_VALID")
-        task.wait(3)
+        script_key = "uYbpFmFElwZdnIPILuATcnOMqKBAfWNb"
+        task.wait(2)
         return true
     end
 end
