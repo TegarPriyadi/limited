@@ -9,16 +9,8 @@ local function Notif(text)
     end)
 end
 
-
----------------------------------------------------------------------
---  API LUARMOR (TETAP DIPERTAHANKAN)
----------------------------------------------------------------------
 local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
 
-
----------------------------------------------------------------------
---  GAME PLACE ID VALID LIST  (DENGAN DROPDOWN)
----------------------------------------------------------------------
 local GameList = {
     ["Garden"] = {id = 126884695634066, script = "c7e7c28da728c6863a012ed2bd46f183"},
     ["Brainrot"] = {id = 109983668079237, script = "6f0b98e1fcdc5802e05d12fb3160357e"},
@@ -31,9 +23,6 @@ local GameList = {
 }
 
 
----------------------------------------------------------------------
---   CHECK PLACE AND APPLY SCRIPT ID
----------------------------------------------------------------------
 local function checkPlace()
     local id = game.PlaceId
     for name,data in pairs(GameList) do
@@ -49,17 +38,10 @@ end
 if not checkPlace() then return end
 
 
----------------------------------------------------------------------
---  KEY FILE
----------------------------------------------------------------------
 local KeyLimit = "LimitHubKey.txt"
 local screenGui = Instance.new("ScreenGui", game.CoreGui)
 
 
-
----------------------------------------------------------------------
---  CHECK KEY FUNCTION (TETAP DIPERTAHANKAN)
----------------------------------------------------------------------
 local function checkKeyLuarmor(key)
     local status = api.check_key(key)
     print(status)
@@ -84,9 +66,6 @@ local function checkKeyLuarmor(key)
 end
 
 
----------------------------------------------------------------------
---  AUTO LOAD SAVED KEY (TETAP DIPERTAHANKAN)
----------------------------------------------------------------------
 local function keyIsSaved()
     if isfile(KeyLimit) then
         local savedKey = readfile(KeyLimit)
@@ -113,9 +92,6 @@ local function keyIsSaved()
 end
 
 
----------------------------------------------------------------------
---   UI DESIGN (TIDAK DIUBAH)
----------------------------------------------------------------------
 screenGui.Name = "KeyUI"
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 screenGui.ResetOnSpawn = false
@@ -139,10 +115,6 @@ local function ApplyUI(frame)
     stroke.Transparency = 0.4
 end
 
-
----------------------------------------------------------------------
---   MAIN FRAME
----------------------------------------------------------------------
 local mainFrame = Instance.new("Frame", screenGui)
 mainFrame.Size = UDim2.new(0, 320, 0, 260)
 mainFrame.Position = UDim2.new(0.5, -160, 0.5, -120)
@@ -159,10 +131,6 @@ title.TextColor3 = colors.Text
 title.Font = Enum.Font.GothamSemibold
 title.TextSize = 18
 
-
----------------------------------------------------------------------
---   GAME DROPDOWN
----------------------------------------------------------------------
 local dropdown = Instance.new("TextButton", mainFrame)
 dropdown.Size = UDim2.new(1, -40, 0, 30)
 dropdown.Position = UDim2.new(0, 20, 0, 50)
@@ -209,10 +177,6 @@ end
 
 dropdownFrame.Size = UDim2.new(1, -40, 0, y)
 
-
----------------------------------------------------------------------
---   KEY TEXTBOX
----------------------------------------------------------------------
 local keyBox = Instance.new("TextBox", mainFrame)
 keyBox.Size = UDim2.new(1, -40, 0, 36)
 keyBox.Position = UDim2.new(0, 20, 0, 115)
@@ -223,11 +187,6 @@ keyBox.Font = Enum.Font.Gotham
 keyBox.TextSize = 14
 ApplyUI(keyBox)
 
-
-
----------------------------------------------------------------------
---   BUTTON: AUTO GENERATE KEY (TANPA LIMIT)
----------------------------------------------------------------------
 local getKeyBtn = Instance.new("TextButton", mainFrame)
 getKeyBtn.Size = UDim2.new(1, -40, 0, 32)
 getKeyBtn.Position = UDim2.new(0, 20, 0, 160)
@@ -244,11 +203,6 @@ getKeyBtn.MouseButton1Click:Connect(function()
     Notif("Key Generated!")
 end)
 
-
-
----------------------------------------------------------------------
---   BUTTON: CHECK KEY
----------------------------------------------------------------------
 local checkKey = Instance.new("TextButton", mainFrame)
 checkKey.Size = UDim2.new(1, -40, 0, 32)
 checkKey.Position = UDim2.new(0, 20, 0, 200)
@@ -276,8 +230,4 @@ checkKey.MouseButton1Click:Connect(function()
     end
 end)
 
-
----------------------------------------------------------------------
---   AUTO LOAD SAVED KEY
----------------------------------------------------------------------
-keyIsSaved()
+--keyIsSaved()
