@@ -15,7 +15,7 @@ local function keyIsSaved()
         screenGui:Destroy()
         Notif("Auto Load Key: KEY_VALID")
         script_key = "uYbpFmFElwZdnIPILuATcnOMqKBAfWNb"
-        task.wait(2)
+        task.wait(1)
         return true
     end
 end
