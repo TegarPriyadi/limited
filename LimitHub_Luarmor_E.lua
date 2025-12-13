@@ -1,8 +1,8 @@
-local _D = D
-D = function(i)
-    local r = _D(i)
-    print("[STRING]", i, r)
-    return r
+local _sub = string.sub
+string.sub = function(a,b,c)
+	local r = _sub(a,b,c)
+	print("[string.sub]", r)
+	return r
 end
 
 local n = {
