@@ -1,10 +1,3 @@
-local _sub = string.sub
-string.sub = function(a,b,c)
-	local r = _sub(a,b,c)
-	print("[string.sub]", r)
-	return r
-end
-
 local n = {
 		"hyTXI+L5ELi4UeThUQO=",
 		"L/ibWh6=",
